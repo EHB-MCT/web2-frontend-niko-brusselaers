@@ -1,4 +1,4 @@
-const apiURL = "https://web2-backend-niko-brusselaers.herokuapp.com/"
+const apiURL = "https://web2-backend-niko-brusselaers.herokuapp.com"
 
 
 
