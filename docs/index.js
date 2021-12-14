@@ -1,3 +1,7 @@
+const apiURL = "https://web2-backend-niko-brusselaers.herokuapp.com/"
+
+
+
 const createAccount = document.getElementById("createAccount");
 createAccount.addEventListener('click', (event) => {
     event.preventDefault();
@@ -10,7 +14,7 @@ createAccount.addEventListener('click', (event) => {
     const lastname = document.getElementById('lastname').value.toString();
 
     if(password == passwordConfirm) {
-        fetch("http://localhost:3000/create-account", {
+        fetch(`${apiURL}/create-account`, {
         method: "POST",
         headers:{'Content-Type': 'application/json',},
         body: JSON.stringify({
@@ -39,7 +43,7 @@ login.addEventListener('submit', (event) => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch('http://localhost:3000/login', {
+    fetch(`${apiURL}/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
