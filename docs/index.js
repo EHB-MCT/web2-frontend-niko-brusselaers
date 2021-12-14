@@ -1,7 +1,3 @@
-const apiURL = "https://web2-backend-niko-brusselaers.herokuapp.com"
-
-
-
 const createAccount = document.getElementById("createAccount");
 createAccount.addEventListener('click', (event) => {
     event.preventDefault();
@@ -13,25 +9,30 @@ createAccount.addEventListener('click', (event) => {
     const firstname = document.getElementById('firstname').value.toString();
     const lastname = document.getElementById('lastname').value.toString();
 
-    if(password == passwordConfirm) {
-        fetch(`${apiURL}create-account`, {
-        method: "POST",
-        headers:{'Content-Type': 'application/json',},
-        body: JSON.stringify({
-            "username": username,
-            "password": password,
-            "email": email,
-            "firstname": firstname,
-            "lastname":lastname
-        })
-    })
-    .then((response) => response.json())
-    .then(data => {
-        console.log(data);
-    }).catch((error) => {
-        console.error(error);
-    })} else {
-        console.log({error: "password doesnt match"});
+    if (password == passwordConfirm) {
+        fetch(`https://web2-backend-niko-brusselaers.herokuapp.com/create-account`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "username": username,
+                    "password": password,
+                    "email": email,
+                    "firstname": firstname,
+                    "lastname": lastname
+                })
+            })
+            .then((response) => response.json())
+            .then(data => {
+                console.log(data);
+            }).catch((error) => {
+                console.error(error);
+            })
+    } else {
+        console.log({
+            error: "password doesnt match"
+        });
     }
 })
 
@@ -43,7 +44,7 @@ login.addEventListener('submit', (event) => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch(`${apiURL}login`, {
+    fetch(`https://web2-backend-niko-brusselaers.herokuapp.com/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
