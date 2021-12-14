@@ -14,7 +14,7 @@ createAccount.addEventListener('click', (event) => {
     const lastname = document.getElementById('lastname').value.toString();
 
     if(password == passwordConfirm) {
-        fetch(`${apiURL}/create-account`, {
+        fetch(`${apiURL}create-account`, {
         method: "POST",
         headers:{'Content-Type': 'application/json',},
         body: JSON.stringify({
@@ -43,7 +43,7 @@ login.addEventListener('submit', (event) => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch(`${apiURL}/login`, {
+    fetch(`${apiURL}login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
