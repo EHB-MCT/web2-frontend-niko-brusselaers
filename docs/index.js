@@ -1,3 +1,5 @@
+const webpage = window.location.href;
+console.log(webpage);
 const createAccount = document.getElementById("createAccount");
 createAccount.addEventListener('click', (event) => {
     event.preventDefault();
