@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'docs'),
-        filename: 'login.js',
+        filename: 'login.html',
     },
     mode: 'development',
     watch: true
