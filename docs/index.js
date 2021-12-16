@@ -1,6 +1,6 @@
 const webpage = window.location.href;
 console.log(webpage);
-const createAccount = document.getElementById("createAccount");
+const createAccount = document.getElementById("createAccountForm");
 createAccount.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -38,7 +38,7 @@ createAccount.addEventListener('click', (event) => {
     }
 })
 
-const login = document.getElementById('login')
+const login = document.getElementById('loginForm')
 
 login.addEventListener('submit', (event) => {
     event.preventDefault();
