@@ -4,7 +4,7 @@ login.addEventListener('submit', (event) => {
     //read all fields values and send the data to rest api
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const singedIn = document.getElementById('keepSignedIn').checked
+    const keepSingedIn = document.getElementById('keepSignedIn').checked
     //https://web2-backend-niko-brusselaers.herokuapp.com
     fetch(`http://localhost:3000/login`, {
             method: "POST",
@@ -22,7 +22,7 @@ login.addEventListener('submit', (event) => {
             console.log(response);
             sessionStorage.setItem("id", response.id[0]);
             sessionStorage.setItem('username', response.username);
-            if (singedIn) {
+            if (keepSingedIn) {
                 localStorage.setItem('id', response.id[0]);
                 localStorage.setItem('username', response.username);
             }

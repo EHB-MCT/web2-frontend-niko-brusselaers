@@ -4,13 +4,13 @@ window.onload = function () {
     if (sessionStorage.getItem('id') !== null) {
         username = sessionStorage.getItem('username');
         userId = sessionStorage.getItem('id');
-
+       (username, userId);
 
     } else if (localStorage.getItem('id') !== null) {
         username = localStorage.getItem('username');
         userId = localStorage.getItem('id');
+        loginId(username, userId);
     }
-    loginId(username, userId);
 
 }
 
@@ -29,6 +29,7 @@ function loginId(username, userId) {
         })
         .then(response => response.json())
         .then(response => {
+            console.log(response);
             if (document.URL.includes('login') || document.URL.includes('create-account')) {
                 window.location.replace("index.html");
             }
