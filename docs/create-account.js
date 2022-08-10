@@ -10,6 +10,7 @@ createAccount.addEventListener('click', (event) => {
     const lastname = document.getElementById('lastname').value.toString();
     // if the password has been correctly typed twice, send request to rest api who checks if a account with same username or email already exists.
     if (password == passwordConfirm) {
+        let statusCode
         //https://web2-backend-niko-brusselaers.herokuapp.com
         fetch(`http://localhost:3000/create-account`, {
                 method: "POST",
@@ -25,10 +26,14 @@ createAccount.addEventListener('click', (event) => {
                 })
             })
             // if no user already exists with same username or email, api creates account and user gets rerouted to the login page
-            .then((response) => response.json())
+            .then((response) => {
+                statusCode = response.status
+                return response.json()
+            })
             .then(data => {
-                console.log(data);
-                window.location.replace("login.html");
+                if (statusCode == 200) {
+                    window.location.replace("login.html");
+                }
             }).catch((error) => {
                 console.error(error);
             })
