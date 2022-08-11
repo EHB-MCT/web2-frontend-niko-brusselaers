@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
     <script type="module" src="./LoginId.js"></script>
-    <title>Document</title>
+    <title>Events</title>
 </head>
-<body>
-    <p> a simple test</p>
-    <a href="./login.html">login page</a>
-    <a href="./create-account.html">create account</a>
-    <a href="./create-event.html">create event</a>
-    
+
+<body class="calenderEvents">
+    <div class="sidenav sidenavOpen">
+        <a href="#" class="menu-collapse">
+            <img src="./images/icons/menu-collapse.png" alt="">
+        </a>
+        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
+            class="sidenavLogo" alt="">
+
+        <a href="#" class="sidenavLinks">
+            <img src="./images/icons/add-event.png" alt="">
+            Create Event
+        </a>
+        <a href="./login.html" class="sidenavLinks">
+            <img src="./images/icons/profile.png" alt="">
+            My Account
+        </a>
+        <a href="#" class="sidenavLinks">
+            <img src="./images/icons/my-events.png" alt="">
+            My Events
+        </a>
+        <a href="#" class="sidenavLinks log-out">
+            <img src="./images/icons/log-out.png" alt="">
+            Log Out
+        </a>
+    </div>
+
+    <div class="CalenderEventContainer">
+        <a href="" class="EventContainer">
+            <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt=""
+                class="eventImage">
+            <div>
+                <h2>testing title</h2>
+                <p class="eventDate">11/08/2022</p>
+                <p class="eventLocation">Brussels</p>
+                <div class="eventcategorieDiv">
+                    <img class="eventCategorieColor">
+                    <p class="categorie">airsoft</p>
+                </div>
+            </div>
+        </a>
+
+
+    </div>
 
 </body>
+
 </html>

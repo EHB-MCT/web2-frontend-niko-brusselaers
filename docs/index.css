@@ -4,15 +4,7 @@
     font-size: 16px;
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+
 
 form {
     display: flex;
@@ -29,10 +21,29 @@ input[type="email"] {
     border-radius: 5px;
 }
 
+body {
+    display: flex;
+}
+
 
 /**********************************************
 ******************* classes *******************
 **********************************************/
+
+body.login,
+body.createAccount {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+body.calenderEvents,
+body.myAccount {
+    background-color: #EBF3FF;
+}
 
 .verticalFormFields {
     display: flex;
@@ -42,13 +53,72 @@ input[type="email"] {
 }
 
 
-
 .verticalFormFields input[type="text"]:first-child {
     margin: 0.5em .5em .5em 0em;
 }
 
 .verticalFormFields input[type="text"]:last-child {
     margin: 0.5em 0em .5em .5em;
+}
+
+/*********************************
+************ sidenav *************
+*********************************/
+
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    background-color: #327AF9;
+    height: 100vh;
+    align-items: center;
+    padding: 0%;
+
+    border-radius: 0em 5em 5em 0em;
+
+}
+
+.sidenavOpen {
+    width: 15vw;
+
+}
+
+.menu-collapse {
+    align-self: flex-start;
+    margin: 1em;
+}
+
+.sidenavLogo {
+    width: 10em;
+    height: 10em;
+    background-color: gray;
+    border-radius: 100em;
+    border-color: white;
+    border-style: solid;
+    border-width: .5em;
+    margin-bottom: 2em;
+}
+
+.sidenavLinks {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    border-radius: 3em;
+    margin: .5em 0em;
+}
+
+.sidenavLinks img {
+    margin: .5em 1em .5em .5em;
+}
+
+.sidenavLinks {
+    text-decoration: none;
+}
+
+.log-out {
+    margin-top: 110%;
 }
 
 
@@ -71,6 +141,7 @@ input[type="email"] {
     height: 100vh;
     background-color: #EBF3FF;
 }
+
 
 .loginForm *,
 .createAccountForm * {
@@ -128,4 +199,82 @@ input[type='submit'] {
     box-sizing: content-box;
     width: 50vw;
     padding-left: 15vw;
+}
+
+/*********************************************
+************ Calender Event list *************
+*********************************************/
+
+.CalenderEventContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5em;
+    width: 75vw;
+}
+
+.EventContainer {
+    display: flex;
+    height: 10em;
+    width: 20em;
+    margin: 3em;
+    padding: 0em;
+    background-color: white;
+    border-radius: 1em;
+}
+
+.EventContainer * {
+    text-decoration: none;
+}
+
+.eventImage {
+    width: 10em;
+    height: 10em;
+    border-radius: 1em 0em 0em 1em;
+    background-color: gray;
+}
+
+.EventContainer div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.eventcategorieDiv {
+    margin: 0em;
+    padding: 0em;
+    display: flex;
+}
+
+.EventContainer div *{
+    margin: 1em 0em 0em 1em;
+}
+
+.EventContainer div h2{
+    margin: 1em 0em 2em 1em;
+}
+
+
+.eventCategorieColor {
+    width: 1em;
+    background-color: #327AF9;
+}
+
+.airsoft {
+    background-color: #ECCF00;
+}
+
+.party {
+    background-color: #F792D9;
+}
+
+.art {
+    background-color: #80FF57;
+}
+
+.music {
+    background-color: #FF7915;
+}
+
+.gaming {
+    background-color: #B96BDD;
 }
