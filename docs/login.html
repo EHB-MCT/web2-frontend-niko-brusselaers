@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="./index.css">
     <script type="module" src="./login.js"></script>
     <script type="module" src="./LoginId.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <title>Login</title>
+    <title>Sign in</title>
 </head>
 
 <body>
     <div class="login">
-        <h1>Login</h1>
-        <p>New user? <a href="./create-account.html">Create account</a></p>
-
-        <form id="loginForm">
+        <form id="loginForm" class="loginForm">
+            <h1>Sign In</h1>
             <input type="text" placeholder="username" name="username" id="username">
-
             <input type="password" placeholder="password" name="password" id="password">
-            <label for="">
-                <input type="checkbox" id="keepSignedIn" name="keep signed in"> keep signed in
+            <label for="" class="checkboxLabel">
+                <input type="checkbox" id="keepSignedIn" name="keep signed in"> keep me signed in
             </label>
-            <input id="submitbutton" type="submit" name="submit" value="submit">
+            <input id="submitbutton" type="submit" name="submit" value="Sign In">
+            <p>New user? <a href="./create-account.html">Create account</a></p>
         </form>
+
     </div>
+
     <img class="sideImage" src="./images/loginCalendarImage.png" alt="">
 
 </body>

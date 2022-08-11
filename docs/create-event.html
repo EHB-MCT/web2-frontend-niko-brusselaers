@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,42 @@
     <link rel="stylesheet" href="./index.css">
     <script type="module" src="./create-event.js"></script>
     <script type="module" src="./LoginId.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=googlekey&libraries=places&callback=initAutocomplete">
+    </script>
     <title>Create Event</title>
 </head>
+
 <body>
-    <div class="CreateEvent">
+    <div class="createEvent">
         <form id="createEventForm">
             <label for="title"></label>
-            <input type="text" placeholder="title" name="title" id="title">
-            <label for="description"></label>
-            <input type="text" placeholder="description" name="description" id="description">
-            <label for="startDate"></label>
+            <input type="text" placeholder="name of event" name="title" id="title">
+
+            <label for="Date"></label>
             <input type="text" placeholder="Start date" name="startDate" id="startDate">
-            <label for="startDate"></label>
-            <input type="text" placeholder="End date" name="endDate" id="endDate">
+
+            <label for="startTime"></label>
+            <input type="text" placeholder="Start time" name="startTime" id="startTime">
+
+            <label for="endTime"></label>
+            <input type="text" placeholder="End time" name="endTime" id="endTime">
+
+            <label for="location"></label>
+            <input type="text" id="autocomplete">
+
             <label for="price"></label>
             <input type="text" placeholder="price" name="price" id="price">
-            <label for="location"></label>
-            <input type="text" placeholder="location" name="location" id="location">
+
+            <label for="description"></label>
+            <input type="text" placeholder="description" name="description" id="description">
+
+            <label for="image"></label>
+            <input type="file" id="myFile" name="filename">
+
             <input id="submitbutton" type="submit" name="submit" value="submit">
         </form>
     </div>
 </body>
+
 </html>
