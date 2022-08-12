@@ -13,16 +13,38 @@ form {
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+select {
     padding: .5em;
     margin: .5em 0em;
     width: 100%;
     border-style: none;
     border-radius: 5px;
+    box-shadow: 1px 1px 3px;
+}
+
+input[type="file"] {
+    margin: 1em 0em;
 }
 
 body {
     display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 
@@ -45,7 +67,8 @@ body.myAccount {
     background-color: #EBF3FF;
 }
 
-.verticalFormFields {
+.verticalFormFields,
+.verticalFormFieldsThree {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -53,12 +76,18 @@ body.myAccount {
 }
 
 
-.verticalFormFields input[type="text"]:first-child {
+.verticalFormFields input[type="text"]:first-child,
+.verticalFormFields input[type="submit"]:first-child {
     margin: 0.5em .5em .5em 0em;
 }
 
-.verticalFormFields input[type="text"]:last-child {
+.verticalFormFields input[type="text"]:last-child,
+.verticalFormFields button {
     margin: 0.5em 0em .5em .5em;
+}
+
+input[type="text"].middlefield {
+    margin: .5em 1em;
 }
 
 /*********************************
@@ -92,8 +121,8 @@ body.myAccount {
 .sidenavLogo {
     width: 10em;
     height: 10em;
-    background-color: gray;
-    border-radius: 100em;
+    background-color: white;
+    border-radius: 25%;
     border-color: white;
     border-style: solid;
     border-width: .5em;
@@ -118,7 +147,7 @@ body.myAccount {
 }
 
 .log-out {
-    margin-top: 110%;
+    margin-top: 80%;
 }
 
 
@@ -179,7 +208,8 @@ input[type='checkbox'] {
 
 
 
-input[type='submit'] {
+input[type='submit'],
+button {
     background-color: #327AF9;
     color: white;
     border: none;
@@ -208,27 +238,71 @@ input[type='submit'] {
 .CalenderEventContainer {
     display: flex;
     flex-wrap: wrap;
-    margin: 5em;
-    width: 75vw;
+    justify-content: flex-start;
+    align-content: center;
+
+}
+
+.eventList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 88em;
+    margin-left: 5vw;
+
+}
+
+.eventPages {
+    display: flex;
+    margin: 2em;
+
+}
+
+.eventPages a {
+    display: flex;
+    align-items: center;
+    padding: 0em;
+}
+
+.eventPages * {
+    margin: 0em .15em;
+    border-radius: 50%;
+}
+
+.unselectedPage {
+    width: 20px;
+    height: 20px;
+    border: black 1px solid;
+}
+
+.selectedPage {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: #2D2DE8;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
 }
 
 .EventContainer {
     display: flex;
-    height: 10em;
+    height: 12em;
     width: 20em;
-    margin: 3em;
+    margin: 1em;
     padding: 0em;
     background-color: white;
     border-radius: 1em;
 }
 
-.EventContainer * {
-    text-decoration: none;
-}
 
 .eventImage {
     width: 10em;
-    height: 10em;
+    height: 12em;
     border-radius: 1em 0em 0em 1em;
     background-color: gray;
 }
@@ -245,36 +319,162 @@ input[type='submit'] {
     display: flex;
 }
 
-.EventContainer div *{
-    margin: 1em 0em 0em 1em;
+.EventContainer div * {
+    margin: .5em 0em 0em 1em;
 }
 
-.EventContainer div h2{
+.EventContainer div h2 {
     margin: 1em 0em 2em 1em;
 }
 
-
-.eventCategorieColor {
-    width: 1em;
-    background-color: #327AF9;
+.categorieSelection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.airsoft {
+
+
+.categorieSelection a {
+    margin: 1em 0em;
+    padding: .5em 0em;
+    border-radius: .5em;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.categorieSelection a * {
+    margin: 0em .5em;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+}
+
+a.airsoft {
     background-color: #ECCF00;
 }
 
-.party {
+a.airsoft {
+    background-color: #ECCF00;
+}
+
+a.party {
     background-color: #F792D9;
 }
 
-.art {
+a.art {
     background-color: #80FF57;
 }
 
-.music {
+a.music {
     background-color: #FF7915;
 }
 
-.gaming {
+a.gaming {
     background-color: #B96BDD;
+}
+
+
+/*
+    source dot before element: http: //jsfiddle.net/JoshC/T652B/1/
+*/
+
+
+p.airsoft:before {
+    content: "";
+    display: inline-block;
+    margin: 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ECCF00;
+}
+
+p.party:before {
+    content: "";
+    display: inline-block;
+    margin: 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #F792D9;
+}
+
+p.art:before {
+    content: "";
+    display: inline-block;
+    margin: 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #80FF57;
+}
+
+p.music:before {
+    content: "";
+    display: inline-block;
+    margin: 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF7915;
+}
+
+p.gaming:before {
+    content: "";
+    display: inline-block;
+    margin: 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #B96BDD;
+}
+
+/*********************************************
+************ create/update event *************
+*********************************************/
+
+.createEvent {
+    margin-top: 8%;
+    margin-left: 35%;
+    display: flex;
+    background-color: white;
+    width: 40em;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+}
+
+.createEventForm {
+    background-color: white;
+    width: 30em;
+}
+
+.createEvent h1,
+.createEvent p {
+    align-self: flex-start;
+}
+
+.createEvent h1 {
+    font-size: 30pt;
+    margin: 1em 0em 0em 2em;
+}
+
+.createEvent p {
+    margin: 1em 0em 3em 5em;
+    width: 20em;
+}
+
+.createEventForm .verticalFormFields{
+    margin: 2em 0em 1em;
+}
+
+.cancel{
+    background: white;
+    border-style: solid;
+    border-color:#327AF9;
+    color: #000;
 }

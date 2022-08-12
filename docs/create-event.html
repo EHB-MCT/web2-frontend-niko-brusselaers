@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/icons/Main_Logo.png">
     <link rel="stylesheet" href="./index.css">
     <script type="module" src="./create-event.js"></script>
     <script type="module" src="./LoginId.js"></script>
@@ -15,35 +16,56 @@
 </head>
 
 <body>
-    <div class="createEvent">
-        <form id="createEventForm">
-            <label for="title"></label>
-            <input type="text" placeholder="name of event" name="title" id="title">
+    <div class="overlay">
+        <div class="createEvent">
+            <h1>Add an event</h1>
+            <p>
+                Do you organise or take part to a nice event?
+                Share it with everyone and have all a nice
+                moment together.
+            </p>
 
-            <label for="Date"></label>
-            <input type="text" placeholder="Start date" name="startDate" id="startDate">
+            <form id="createEventForm" class="createEventForm">
+                <label for="title"></label>
+                <input type="text" placeholder="name of event" name="title" id="title">
+                <div class="verticalFormFieldsThree">
+                    <input type="text" placeholder="Start date" name="startDate" id="startDate">
 
-            <label for="startTime"></label>
-            <input type="text" placeholder="Start time" name="startTime" id="startTime">
+                    <input type="text" placeholder="Start time" name="startTime" id="startTime" class="middlefield">
 
-            <label for="endTime"></label>
-            <input type="text" placeholder="End time" name="endTime" id="endTime">
+                    <input type="text" placeholder="End time" name="endTime" id="endTime">
 
-            <label for="location"></label>
-            <input type="text" id="autocomplete">
+                </div>
 
-            <label for="price"></label>
-            <input type="text" placeholder="price" name="price" id="price">
+                <label for="location"></label>
+                <input type="text" id="autocomplete">
 
-            <label for="description"></label>
-            <input type="text" placeholder="description" name="description" id="description">
+                <label for="price"></label>
+                <input type="text" placeholder="price" name="price" id="price">
 
-            <label for="image"></label>
-            <input type="file" id="myFile" name="filename">
+                <select id="cars" name="cars">
+                    <option value="">choose a category</option>
+                    <option value="airsoft">airsoft</option>
+                    <option value="party">party</option>
+                    <option value="art">art</option>
+                    <option value="music">music</option>
+                    <option value="gaming">gaming</option>
 
-            <input id="submitbutton" type="submit" name="submit" value="submit">
-        </form>
-    </div>
+                </select>
+
+                <label for="URL"></label>
+                <input type="text" placeholder="URL (optional)" name="description" id="description">
+
+                <label for="image"></label>
+                <input type="file" id="myFile" name="filename">
+
+                <label for="description"></label>
+                <input type="text" placeholder="description" name="description" id="description">
+                <div class="verticalFormFields">
+                    <input id="submitbutton" type="submit" name="submit" value="submit">
+                    <button class="cancel">cancel</button>
+                </div>
+        </div>
 </body>
 
 </html>
