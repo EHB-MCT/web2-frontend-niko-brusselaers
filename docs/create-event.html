@@ -10,7 +10,8 @@
     <script type="module" src="./create-event.js"></script>
     <script type="module" src="./LoginId.js"></script>
     <script async
-        src="https://maps.googleapis.com/maps/api/js?key=googlekey&libraries=places&callback=initAutocomplete">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC32Js-gy90oI48QLIQhIsz6PAHoAG-kY&libraries=places&callback=initAutocomplete">
+        defer
     </script>
     <title>Create Event</title>
 </head>
@@ -63,9 +64,11 @@
                 <input type="text" placeholder="description" name="description" id="description">
                 <div class="verticalFormFields">
                     <input id="submitbutton" type="submit" name="submit" value="submit">
-                    <button class="cancel">cancel</button>
+                    <button class="cancel" id="closeOverlay">cancel</button>
                 </div>
         </div>
+
+
 </body>
 
 </html>

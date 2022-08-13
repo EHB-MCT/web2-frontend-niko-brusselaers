@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/icons/Main_Logo.png">
     <link rel="stylesheet" href="./index.css">
-    <script type="module" src="./LoginId.js"></script>
-    <title>Eventr</title>
+    <script type="module" src="./myEvents.js"></script>
+    <title>My Events</title>
 </head>
 
 <body class="calenderEvents">
@@ -22,7 +22,7 @@
             <img src="./images/icons/add-event.png" alt="">
             Create Event
         </a>
-        <a href="./my-Account.html" class="sidenavLinks">
+        <a href="./login.html" class="sidenavLinks">
             <img src="./images/icons/profile.png" alt="">
             My Account
         </a>
@@ -36,6 +36,10 @@
         </a>
     </div>
     <div class="eventList">
+        <div class="buttonContainer">
+            <button id="savedEvents">saved events</button>
+            <button class="active" id="myEvents">my events</button>
+        </div>
         <div class="CalenderEventContainer">
             <a href="" class="EventContainer">
                 <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
@@ -132,6 +136,10 @@
                 </div>
             </a>
 
+            <div class="CalenderEventContainer createdEvents">
+
+            </div>
+
         </div>
         <div class="eventPages">
             <a onclick="jsfunction()" href="#" id="previous"><img src="./images/icons/previous-arrow.png" alt=""
@@ -144,7 +152,7 @@
 
         </div>
     </div>
-    
+
 
 </body>
 

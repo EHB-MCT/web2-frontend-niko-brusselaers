@@ -33,18 +33,20 @@ body {
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 .overlay {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
+
 }
 
 
@@ -209,14 +211,14 @@ input[type='checkbox'] {
 
 
 input[type='submit'],
-button {
+button.cancel {
     background-color: #327AF9;
     color: white;
     border: none;
     border-radius: 20px;
     height: 2em;
     width: 80%;
-    margin: 1.5em 0em;
+    margin: 0.5em 0em;
 }
 
 .login p {
@@ -468,13 +470,198 @@ p.gaming:before {
     width: 20em;
 }
 
-.createEventForm .verticalFormFields{
+.createEventForm .verticalFormFields {
     margin: 2em 0em 1em;
 }
 
-.cancel{
+.cancel {
     background: white;
     border-style: solid;
-    border-color:#327AF9;
+    border-color: #327AF9;
     color: #000;
+}
+
+/*********************************************
+************ view event details **************
+*********************************************/
+
+.eventView {
+    margin-top: 10vh;
+    margin-left: 40vw;
+    display: flex;
+    background-color: white;
+    display: flex;
+    width: 30vw;
+    height: 70vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 2em;
+}
+
+.eventImageDetail {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em 2em 0em 0em;
+
+}
+
+.eventImageDetail img {
+    width: 100%;
+    height: 150%;
+    background-color: #000;
+}
+
+.eventDetails h1 {
+    font-size: 25pt;
+    margin: 1em 1em 1em;
+}
+
+.eventDetails p,
+.eventDetails a {
+    margin: 0em 2em 2em;
+    width: 30em;
+    font-weight: bold;
+}
+
+.eventDetails div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#map {
+    height: 100%;
+    width: 10em;
+}
+
+p.eventDescription {
+    font-weight: normal;
+}
+
+button.close {
+    margin: 0em 2em 2em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: none;
+    background-color: #2D2DE8;
+    color: white;
+    font-weight: bold;
+    align-self: end;
+}
+
+/*********************************************
+************** my calender page **************
+*********************************************/
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: #2D2DE8 4px solid;
+    width: 16em;
+    border-radius: 4em;
+}
+
+.buttonContainer * {
+    background-color: white;
+    font-weight: bold;
+}
+
+.buttonContainer button:first-child {
+    height: 3em;
+    width: 8em;
+    border-radius: 2em 0em 0em 2em;
+    border: none;
+}
+
+.buttonContainer button:last-child {
+    height: 3em;
+    width: 8em;
+    border-radius: 0em 2em 2em 0em;
+    border: none;
+}
+
+.buttonContainer button:hover {
+    background-color: #327AF9;
+}
+
+button.active {
+    background-color: #2D2DE8;
+    color: white;
+}
+
+button.active:hover {
+    background-color: #2D2DE8;
+
+}
+
+/*********************************************
+************** my calender page **************
+*********************************************/
+
+.profileTitle{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    width: 100vw;
+    height: 10em;
+    background-color: white;
+}
+
+.profileTitle div{
+    display: flex;
+    flex-direction: row;
+    margin: 6em 0em 0em 33em;
+}
+
+.profileTitle div h1{
+    font-size: 30pt;
+    margin-right: .5em;
+}
+
+.profileTitle div h1:last-child{
+    color: #327AF9;
+}
+
+.personalDetails{
+    margin: 15em ;
+}
+
+.personalDetails h2{
+    font-size: 20pt;
+    margin-bottom: 2em;
+}
+
+.personalDetailsField{
+    margin: 1em 0em;
+    display: flex;
+    align-items: center;
+}
+
+.personalDetailsField p{
+    width: 8em;
+    padding: .5em;
+    background-color: #F5F1F1;
+    text-align: center;
+    border-radius: 1em 0em 0em 1em;
+    box-shadow: 1px 1px 3px;
+
+}
+.personalDetailsField input[type='text']{
+    border-radius: 0em 1em 1em 0em;
+}
+
+.personalDetailsField button{
+    width: 5em;
+    height: 2em;
+    border-radius: .5em;
+    border: none;
+    margin: 0em 0em 0em 1em;
+    background-color: #FDCEE9;
 }
