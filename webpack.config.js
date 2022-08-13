@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './docs/index.js',
+    entry: {
+        index: './docs/index.js',
+    }
     output: {
         path: path.resolve(__dirname, 'docs'),
     },

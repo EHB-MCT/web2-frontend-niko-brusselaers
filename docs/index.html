@@ -7,30 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/icons/Main_Logo.png">
     <link rel="stylesheet" href="./index.css">
-    <script type="module" src="./LoginId.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=apikey&callback=initAutocomplete">
+        defer
+    </script>
     <title>Eventr</title>
 </head>
 
 <body class="calenderEvents">
-    <div class="sidenav sidenavOpen">
-        <a href="#" class="menu-collapse">
-            <img src="./images/icons/menu-collapse.png" alt="">
+    <div class="sidenav sidenavOpen" id="sidenav">
+        <a href="./index.html">
+            <img src="./images/icons/Main_Logo.png" class="sidenavLogo" alt="">
         </a>
-        <img src="./images/icons/Main_Logo.png" class="sidenavLogo" alt="">
 
-        <a href="create-event.html" class="sidenavLinks">
+        <a href="./login.html" class="sidenavLinks " id="loginBtn">
+            <img src="./images/icons/profile.png" alt="">
+            Sign in
+        </a>
+
+        <button class="sidenavLinks hidden" id="createEventButton">
             <img src="./images/icons/add-event.png" alt="">
             Create Event
-        </a>
-        <a href="./my-Account.html" class="sidenavLinks">
+        </button>
+        <a href="./my-Account.html" class="sidenavLinks hidden" id="myAccountBtn">
             <img src="./images/icons/profile.png" alt="">
             My Account
         </a>
-        <a href="./my-events.html" class="sidenavLinks">
+        <a href="./my-Events.html" class="sidenavLinks hidden" id="MyeventsBtn">
             <img src="./images/icons/my-events.png" alt="">
             My Events
         </a>
-        <a href="#" class="sidenavLinks log-out">
+        <a href="#" class="sidenavLinks log-out hidden" id="logoutBtn">
             <img src="./images/icons/log-out.png" alt="">
             Log Out
         </a>
@@ -144,7 +152,60 @@
 
         </div>
     </div>
-    
+    <div id="overlayContainer">
+        <div class="overlay hidden" id="overlayCreateEvent">
+            <div class="createEvent">
+                <h1>Add an event</h1>
+                <p>
+                    Do you organise or take part to a nice event?
+                    Share it with everyone and have all a nice
+                    moment together.
+                </p>
+
+                <form id="createEventForm" class="createEventForm">
+                    <label for="title"></label>
+                    <input type="text" placeholder="name of event" name="title" id="title">
+                    <div class="verticalFormFieldsThree">
+                        <input type="text" placeholder="Start date" name="startDate" id="startDate">
+
+                        <input type="text" placeholder="Start time" name="startTime" id="startTime" class="middlefield">
+
+                        <input type="text" placeholder="End time" name="endTime" id="endTime">
+
+                    </div>
+
+                    <label for="location"></label>
+                    <input type="text" id="autocomplete">
+
+                    <label for="price"></label>
+                    <input type="text" placeholder="price" name="price" id="price">
+
+                    <select id="cars" name="cars">
+                        <option value="">choose a category</option>
+                        <option value="airsoft">airsoft</option>
+                        <option value="party">party</option>
+                        <option value="art">art</option>
+                        <option value="music">music</option>
+                        <option value="gaming">gaming</option>
+
+                    </select>
+
+                    <label for="URL"></label>
+                    <input type="text" placeholder="URL (optional)" name="description" id="description">
+
+                    <label for="image"></label>
+                    <input type="file" id="myFile" name="filename">
+
+                    <label for="description"></label>
+                    <input type="text" placeholder="description" name="description" id="description">
+                    <div class="verticalFormFields">
+                        <input id="submitbutton" type="submit" name="submit" value="submit">
+                        <button class="cancel" id="closeOverlay">cancel</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+        <p id="userActive" class="hidden"></p>
 
 </body>
 

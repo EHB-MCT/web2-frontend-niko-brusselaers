@@ -36,6 +36,15 @@ a {
     color: #000;
 }
 
+button {
+    border: none;
+}
+
+
+/**********************************************
+******************* classes *******************
+**********************************************/
+
 .overlay {
     position: fixed;
     width: 100vw;
@@ -49,10 +58,12 @@ a {
 
 }
 
+.hidden,
+a.hidden,
+button.hidden {
+    display: none;
+}
 
-/**********************************************
-******************* classes *******************
-**********************************************/
 
 body.login,
 body.createAccount {
@@ -128,7 +139,7 @@ input[type="text"].middlefield {
     border-color: white;
     border-style: solid;
     border-width: .5em;
-    margin-bottom: 2em;
+    margin: 3em;
 }
 
 .sidenavLinks {
@@ -440,7 +451,7 @@ p.gaming:before {
 *********************************************/
 
 .createEvent {
-    margin-top: 8%;
+    margin-top: 6%;
     margin-left: 35%;
     display: flex;
     background-color: white;
@@ -604,7 +615,7 @@ button.active:hover {
 ************** my calender page **************
 *********************************************/
 
-.profileTitle{
+.profileTitle {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -614,37 +625,37 @@ button.active:hover {
     background-color: white;
 }
 
-.profileTitle div{
+.profileTitle div {
     display: flex;
     flex-direction: row;
     margin: 6em 0em 0em 33em;
 }
 
-.profileTitle div h1{
+.profileTitle div h1 {
     font-size: 30pt;
     margin-right: .5em;
 }
 
-.profileTitle div h1:last-child{
+.profileTitle div h1:last-child {
     color: #327AF9;
 }
 
-.personalDetails{
-    margin: 15em ;
+.personalDetails {
+    margin: 15em;
 }
 
-.personalDetails h2{
+.personalDetails h2 {
     font-size: 20pt;
     margin-bottom: 2em;
 }
 
-.personalDetailsField{
+.personalDetailsField {
     margin: 1em 0em;
     display: flex;
     align-items: center;
 }
 
-.personalDetailsField p{
+.personalDetailsField p {
     width: 8em;
     padding: .5em;
     background-color: #F5F1F1;
@@ -653,11 +664,12 @@ button.active:hover {
     box-shadow: 1px 1px 3px;
 
 }
-.personalDetailsField input[type='text']{
+
+.personalDetailsField input[type='text'] {
     border-radius: 0em 1em 1em 0em;
 }
 
-.personalDetailsField button{
+.personalDetailsField button {
     width: 5em;
     height: 2em;
     border-radius: .5em;
